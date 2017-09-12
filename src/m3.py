@@ -5,8 +5,8 @@ That is, no run-time exception occurs, but the function simply
 does not do the right thing.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and JaeJung Hyun  .
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 ########################################################################
@@ -40,6 +40,10 @@ Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
 ########################################################################
 
 def main():
+    is_prime(5)
+    test_broken_1()
+
+
     """ Calls the   TEST   functions in this module. """
 
 
@@ -64,7 +68,9 @@ def is_prime(n):
       -- is_prime(2)  returns  True
     Note: The algorithm used here is simple and clear but slow.
     """
-    for k in range(2, (n // 2) + 1):
+
+    for k in range(2,(n // 2)+1):
+
         if n % k == 0:
             return False
 
@@ -83,6 +89,7 @@ def test_broken_1():
     print('--------------------------------------------------')
 
     expected = 3
+
     actual = broken_1(3)  # Test 1 of broken_1
     print('Expected:', expected)
     print('Actual:  ', actual)
@@ -121,12 +128,11 @@ def broken_1(m):
     #    **  For full credit you must appropriately
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     count = 0
-    for k in range(2 * m):
-        if is_prime(m):
+    for k in range(m, 2*m+2):
+        if is_prime(k):
             count = count + 1
-
-
+    return count
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
-    main()
+main()
